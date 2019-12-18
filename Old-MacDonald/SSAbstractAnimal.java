@@ -39,6 +39,6 @@ public class SSAbstractAnimal implements SSAnimal{
    *@returns - the state of the class
    */
   public String toString(){ 
-	  return "The " + type + " goes " + sound;
+	  return "The " + this.getType() + " goes " + this.getSound();
   }
 }

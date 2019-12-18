@@ -7,10 +7,11 @@
 public class SSDriver {
 
 	public static void main(String[] args) {
-		SSAnimal[] animals = new SSAnimal[3];
+		SSAnimal[] animals = new SSAnimal[4];
 		animals[0] = new SSCow("Moo");
 		animals[1] = new SSChick("chip");
 		animals[2] = new SSPig("oink");
+		animals[3] = new SSConfusedChick("chip", "cluck");
 		SSFarm farm = new SSFarm(animals);
 		
 		System.out.println(farm);
