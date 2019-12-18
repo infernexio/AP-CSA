@@ -19,7 +19,7 @@ public class SSAbstractAnimal implements SSAnimal{
   }
 
   /*
-  *reutrn the cound of the animal
+  *reutrns the sound of the animal
   *@returns - the sound of the animal
   */
   public String getSound(){
@@ -32,5 +32,13 @@ public class SSAbstractAnimal implements SSAnimal{
   */
   public String getType(){
     return type;
+  }
+  
+   /*
+   *returns the state of the class
+   *@returns - the state of the class
+   */
+  public String toString(){ 
+	  return "The " + type + " goes " + sound;
   }
 }
