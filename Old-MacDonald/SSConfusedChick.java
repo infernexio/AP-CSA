@@ -17,6 +17,14 @@ public class SSConfusedChick extends SSChick{
 	}
 	
 	/*
+	  *returns the type of the animal
+	  *@returns - the type of animal this is
+	  */
+	  public String getType(){
+	    return "Cunfused " + super.getType();
+	  }
+	
+	/*
 	  *reutrns the sound of the animal
 	  *@returns - the sound of the animal
 	  */
