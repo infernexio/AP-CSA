@@ -11,10 +11,7 @@ public class SSFarm {
 	  *@param - arr - is an arr of animals given by client
 	  */
 	public SSFarm(SSAnimal[] arr) {
-		animalarr = new SSAnimal[arr.length];
-		for(int i = 0; i < arr.length; i++) {
-			animalarr[i] = arr[i];
-		}
+		animalarr = arr;
 	}
 	
 	   /**
