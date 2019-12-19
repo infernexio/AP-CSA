@@ -1,4 +1,4 @@
-/*
+/**
 * @author - Sohail Shaik
 * @Date - Dec 17,2019
 * @Assignment - SSConfusedChick
@@ -6,7 +6,7 @@
 public class SSConfusedChick extends SSChick{
 	private String secSound;
 	
-	/*
+	/**
 	  *set the initial state of the variables
 	  *@param - s1 - is the the sound the animal makes
 	  *@param - s2 - is the the secound sound the animal makes
@@ -16,7 +16,7 @@ public class SSConfusedChick extends SSChick{
 		secSound = s2;
 	}
 	
-	/*
+	/**
 	  *returns the type of the animal
 	  *@returns - the type of animal this is
 	  */
@@ -24,7 +24,7 @@ public class SSConfusedChick extends SSChick{
 	    return "Cunfused " + super.getType();
 	  }
 	
-	/*
+	/**
 	  *reutrns the sound of the animal
 	  *@returns - the sound of the animal
 	  */
