@@ -28,6 +28,6 @@ public class SSNamedCow extends SSCow{
 	  *@returns - the type of animal this is
 	  */
 	public String getType() {
-		return "Confused " + super.getType();
+		return "Named " + super.getType();
 	}
 }
