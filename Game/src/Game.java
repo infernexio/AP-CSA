@@ -1,63 +1,116 @@
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
 
 /**
-* @author - Sohail Shaik
-* @Date - Dec 25,2019
-* @Assignment - Display
-*/
-public class Game implements Runnable{
+ * @author - Sohail Shaik
+ * @Date - Dec 25,2019
+ * @Assignment - Game
+ */
+public class Game implements Runnable {
+
 	private Display display;
-	private BufferStrategy bs;
-	private Graphics g;
+	public int width, height;
 	public String title;
-	public int width;
-	public int height;
-	private boolean running;
+	
+	private boolean running = false;
 	private Thread thread;
 	
-
-	public Game(String title, int width, int height) {
+	private BufferStrategy bs;
+	private Graphics g;
+	
+	//States
+	private State gameState;
+	private State menuState;
+	
+	//Input
+	private KeyManager keyManager;
+	
+	public Game(String title, int width, int height){
 		this.width = width;
 		this.height = height;
 		this.title = title;
+		keyManager = new KeyManager();
 	}
 	
-	public void init() {
-		display = new Display(title, width, height); 
-	}
-	
-	private void tick() {
+	private void init(){
+		display = new Display(title, width, height);
+		display.getFrame().addKeyListener(keyManager);
+		Assets.init();
 		
+		gameState = new gameState(this);
+		menuState = new menuState(this);
+		State.setState(gameState);
 	}
 	
-	private void render() {
+	private void tick(){
+		keyManager.tick();
+		
+		if(State.getState() != null)
+			State.getState().tick();
+	}
+	
+	private void render(){
 		bs = display.getCanvas().getBufferStrategy();
-		if(bs == null ) {
-			display.getCanvas().createBufferStrategy(3); 
+		if(bs == null){
+			display.getCanvas().createBufferStrategy(3);
 			return;
 		}
 		g = bs.getDrawGraphics();
+		//Clear Screen
+		g.clearRect(0, 0, width, height);
+		//Draw Here!
 		
-		g.fillRect(0, 0, width, height);
+		if(State.getState() != null)
+			State.getState().render(g);
 		
+		//End Drawing!
 		bs.show();
 		g.dispose();
-		
 	}
 	
-	public void run() {
+	public void run(){
+		
 		init();
 		
-		while(running) {
-			tick();
-			render();
+		int fps = 60;
+		double timePerTick = 1000000000 / fps;
+		double delta = 0;
+		long now;
+		long lastTime = System.nanoTime();
+		long timer = 0;
+		int ticks = 0;
+		
+		while(running){
+			now = System.nanoTime();
+			delta += (now - lastTime) / timePerTick;
+			timer += now - lastTime;
+			lastTime = now;
+			
+			if(delta >= 1){
+				tick();
+				render();
+				ticks++;
+				delta--;
+			}
+			
+			if(timer >= 1000000000){
+				System.out.println("Ticks and Frames: " + ticks);
+				ticks = 0;
+				timer = 0;
+			}
 		}
 		
 		stop();
+		
 	}
 	
-	public synchronized void start() {
+	public KeyManager getKeyManager(){
+		return keyManager;
+	}
+	
+	public synchronized void start(){
 		if(running)
 			return;
 		running = true;
@@ -65,8 +118,8 @@ public class Game implements Runnable{
 		thread.start();
 	}
 	
-	public synchronized void stop() {
-		if(!running) 
+	public synchronized void stop(){
+		if(!running)
 			return;
 		running = false;
 		try {
@@ -75,4 +128,5 @@ public class Game implements Runnable{
 			e.printStackTrace();
 		}
 	}
+	
 }
