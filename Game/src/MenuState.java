@@ -5,9 +5,9 @@ import java.awt.Graphics;
 * @Date - Dec 26,2019
 * @Assignment - menuState
 */
-public class menuState extends State {
+public class MenuState extends State {
 	
-	public menuState(Game game) {
+	public MenuState(Game game) {
 		super(game);
 	}
 
