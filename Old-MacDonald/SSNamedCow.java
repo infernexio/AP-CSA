@@ -3,7 +3,7 @@
 * @Date - Dec 17,2019
 * @Assignment - SSNamedCow
 */
-public class SSNamedCow extends SSCow{
+public class SSNamedCow extends SSCow implements SSNamedAnimal{
 	private String name;
 	  /**
 	  *set the initial state of the variables
