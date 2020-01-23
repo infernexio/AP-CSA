@@ -39,9 +39,6 @@ public class SSAbstractAnimal implements SSAnimal{
    *@returns - the state of the class
    */
   public String toString(){ 
-	  if(this instanceof SSNamedCow) {
-		  return  ((SSNamedCow) this).getType() + " " + ((SSNamedCow) this).getName() + " goes " + this.getSound();
-	  }
 	  return "The " + this.getType() + " goes " + this.getSound();
   }
 }
