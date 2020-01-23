@@ -19,8 +19,10 @@ public class SSArrayListOfAnimals {
 		}
 		userNum = sc.nextInt();
 		if(userNum  < 0) {
-			System.out.println("YOu can't enter an negatice!");
+			System.out.println("You can't enter an negatice!");
 		}
 		}while(userNum < 0);
+		
+		
 	}
 }
