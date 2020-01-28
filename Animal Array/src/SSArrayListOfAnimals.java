@@ -71,7 +71,13 @@ public class SSArrayListOfAnimals {
 		sc.close();
 		stringSc.close();
 	}
-
+	
+	/**
+	 * checks for wrong input to a promt
+	 * @param promt - the promt the program wants to ask the user
+	 * @param in - a scanner object that is used to check the user input
+	 * @return - an int that is checked for the wrong input to a promt
+	 */
 	public static int errorCheck(String promt, Scanner in) {
 		int userNum;
 		do {
@@ -87,6 +93,12 @@ public class SSArrayListOfAnimals {
 		}while(userNum < 0);
 		return userNum;
 	}
+	/**
+	 * checks for wrong input to a promt
+	 * @param promt - the promt the program wants to ask the user
+	 * @param in - a scanner object that is used to check the user input
+	 * @return - an string that is checked for the wrong input to a promt
+	 */
 	public static int errorCheck(String promt, Scanner in, int max) {
 		int userNum;
 		do {
@@ -105,7 +117,13 @@ public class SSArrayListOfAnimals {
 		}while(userNum < 0 || userNum > max);
 		return userNum;
 	}
-
+	
+	/**
+	 * checks for wrong input to a promt
+	 * @param promt - the promt the program wants to ask the user
+	 * @param in - a scanner object that is used to check the user input
+	 * @return - an int that is checked for the wrong input to a promt
+	 */
 	public static String errorCheckString(String promt, Scanner in) {
 		String str;
 		do {
