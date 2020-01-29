@@ -121,7 +121,11 @@ public class IntArrayWorker
 		}
 		return count;
 	}
-
+	
+	/**
+	 * get the largest value in the arry
+	 * @return - the largest value in the array
+	 */
 	public int getLargest() {
 		int largest = 0;
 		for (int i = 0; i < matrix.length; i++) {
@@ -133,15 +137,20 @@ public class IntArrayWorker
 		}
 		return largest;
 	}
-
+	
+	/**
+	 * get the total in the colum
+	 * @return - get the total in the colum
+	 */
 	public int getColTotal(int num) {
 		int sum = 0;
 		for (int i = 0; i < matrix.length; i++) {
-			if(num == i) {
 				for(int j = 0; j < matrix[i].length; j++) {
-					sum ++;
+					if(j == num) {
+						sum += matrix[i][j];
+					}
 				}
-			}
+			
 		}
 		return sum;
 	}
