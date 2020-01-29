@@ -140,6 +140,7 @@ public class IntArrayWorker
 	
 	/**
 	 * get the total in the colum
+	 * @param num - given colum to look for
 	 * @return - get the total in the colum
 	 */
 	public int getColTotal(int num) {
