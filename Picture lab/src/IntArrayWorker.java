@@ -104,7 +104,7 @@ public class IntArrayWorker
 			}
 		}
 	}
-	
+
 	/**
 	 * get the count of a number that is given
 	 * @param num - is a given number we are looking for
@@ -132,6 +132,18 @@ public class IntArrayWorker
 			}
 		}
 		return largest;
+	}
+
+	public int getColTotal(int num) {
+		int sum = 0;
+		for (int i = 0; i < matrix.length; i++) {
+			if(num == i) {
+				for(int j = 0; j < matrix[i].length; j++) {
+					sum ++;
+				}
+			}
+		}
+		return sum;
 	}
 }
 
