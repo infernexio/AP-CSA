@@ -121,5 +121,17 @@ public class IntArrayWorker
 		}
 		return count;
 	}
+
+	public int getLargest() {
+		int largest = 0;
+		for (int i = 0; i < matrix.length; i++) {
+			for(int j = 0; j < matrix[i].length; j++) {
+				if(largest < matrix[i][j]) {
+					largest = matrix[i][j];
+				}
+			}
+		}
+		return largest;
+	}
 }
 
