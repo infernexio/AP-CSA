@@ -4,7 +4,7 @@
  * @Assignment - IntArrayWorker
  */
 
-public class IntArrayWorker
+public class SSIntArrayWorker
 {
 	/** two dimensional matrix */
 	private int[][] matrix = null;

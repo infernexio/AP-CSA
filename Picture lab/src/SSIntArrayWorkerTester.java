@@ -3,12 +3,12 @@
  * @Date - Jan 29,2019
  * @Assignment - IntArrayWorkerTester
  */
-public class IntArrayWorkerTester
+public class SSIntArrayWorkerTester
 {
 	/** method to test setMatrix */
 	public static void testSetMatrix()
 	{
-		IntArrayWorker worker = new IntArrayWorker();
+		SSIntArrayWorker worker = new SSIntArrayWorker();
 		int[][] nums = {{1, 1, 1} ,{2,2,2}};
 		worker.setMatrix(nums);
 		System.out.println("This should have all 1's in first row and all 2's in second");
@@ -18,7 +18,7 @@ public class IntArrayWorkerTester
 	/** Method to test fillPattern1 */
 	public static void testFillPattern1()
 	{
-		IntArrayWorker worker = new IntArrayWorker();
+		SSIntArrayWorker worker = new SSIntArrayWorker();
 		int[][] nums = new int[3][4];
 		worker.setMatrix(nums);
 		worker.fillPattern1();
@@ -29,7 +29,7 @@ public class IntArrayWorkerTester
 	/** Method to test getCount*/
 	public static void testGetCount()
 	{
-		IntArrayWorker worker = new IntArrayWorker();
+		SSIntArrayWorker worker = new SSIntArrayWorker();
 		int[][] nums = new int[3][4];
 		worker.setMatrix(nums);
 		worker.fillPattern1();
@@ -40,7 +40,7 @@ public class IntArrayWorkerTester
 	/** Method to test getTotal */
 	public static void testGetTotal()
 	{
-		IntArrayWorker worker = new IntArrayWorker();
+		SSIntArrayWorker worker = new SSIntArrayWorker();
 		int [][] nums2 = {{1, 2, 3}, {4, 5, 6}};
 		worker.setMatrix(nums2);
 		int total = worker.getTotal();
@@ -50,7 +50,7 @@ public class IntArrayWorkerTester
 	/** Method to test getTotalNested */
 	public static void testGetTotalNested()
 	{
-		IntArrayWorker worker = new IntArrayWorker();
+		SSIntArrayWorker worker = new SSIntArrayWorker();
 		int [][] nums2 = {{1, 2, 3}, {4, 5, 6}};
 		worker.setMatrix(nums2);
 		int total = worker.getTotalNested();
@@ -60,7 +60,7 @@ public class IntArrayWorkerTester
 	/** Method to test getLargest */
 	public static void testGetLargest()
 	{ // test when largest is last
-		IntArrayWorker worker = new IntArrayWorker();
+		SSIntArrayWorker worker = new SSIntArrayWorker();
 		int [][] nums2 = {{1, 2, 3}, {4, 5, 6}};
 		worker.setMatrix(nums2);
 		int largest = worker.getLargest();
@@ -85,7 +85,7 @@ public class IntArrayWorkerTester
 	/** Method to test getColTotal */
 	  public static void testGetColTotal()
 	    {
-		    IntArrayWorker worker = new IntArrayWorker();
+		    SSIntArrayWorker worker = new SSIntArrayWorker();
 		    int [][] nums2 = {{1, 2, 3}, {4, 5, 6}};
 		    worker.setMatrix(nums2);
 		    int total = worker.getColTotal(0);
